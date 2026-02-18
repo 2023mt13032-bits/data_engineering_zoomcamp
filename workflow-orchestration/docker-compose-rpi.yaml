@@ -67,6 +67,7 @@ services:
         max-file: "3"
 
   kestra:
+    env_file: .env_encoded
     image: kestra/kestra:v1.1
     pull_policy: always
     user: "root"
@@ -96,6 +97,11 @@ services:
               basePath: "/app/storage"
           queue:
             type: postgres
+          ai:
+            type: gemini
+            gemini:
+              model-name: gemini-2.5-flash
+              api-key: ${GEMINI_API_KEY}
           tasks:
             tmpDir:
               path: /tmp/kestra-wd/tmp
