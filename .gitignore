@@ -212,3 +212,12 @@ __marimo__/
 service-account.json
 .env_encoded
 .env
+
+
+target/
+dbt_packages/
+logs/
+
+# Data directory
+data/
+*.duckdb
