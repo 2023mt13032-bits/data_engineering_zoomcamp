@@ -221,3 +221,4 @@ logs/
 # Data directory
 data/
 *.duckdb
+dbt_internal_packages/

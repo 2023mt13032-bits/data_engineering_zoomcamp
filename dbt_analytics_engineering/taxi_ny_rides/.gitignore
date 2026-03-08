@@ -5,3 +5,4 @@ logs/
 
 # Data directory
 data/
+dbt_internal_packages/
