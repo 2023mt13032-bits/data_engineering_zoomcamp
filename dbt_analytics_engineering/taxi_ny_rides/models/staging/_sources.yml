@@ -1,8 +1,12 @@
 version: 2
 
 sources:
-  - name: raw
-    description: "Raw data sources for NYC taxi rides"
+  - name: raw_data
+    description: "Raw data from the taxi rides in New York City."
     database: taxi_rides_ny
-    schema: 
+    schema: prod
     tables:
+      - name: yellow_tripdata
+        description: "Yellow taxi trip data for New York City."
+      - name: green_tripdata
+        description: "Green taxi trip data for New York City."
