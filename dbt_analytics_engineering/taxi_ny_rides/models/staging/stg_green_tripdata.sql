@@ -6,23 +6,23 @@ SELECT
     CAST(dolocationid AS int) as dropoff_location_id,
 
     -- timestamps
-    lpep_pickup_datetime as pickup_datetime,
-    lpep_dropoff_datetime as dropoff_datetime,
+    CAST(lpep_pickup_datetime AS timestamp) as pickup_datetime,
+    CAST(lpep_dropoff_datetime AS timestamp) as dropoff_datetime,
 
     -- trip info
     store_and_fwd_flag,
-    passenger_count,
-    trip_distance,
-    trip_type,
+    CAST(passenger_count AS int) as passenger_count,
+    CAST(trip_distance AS float) as trip_distance,
+    CAST(trip_type AS int) as trip_type,
 
     -- payment info
-    fare_amount,
-    extra,
-    mta_tax,
-    tip_amount,
-    tolls_amount,
-    ehail_fee,
-    improvement_surcharge,
-    total_amount,
-    payment_type
+    CAST(fare_amount AS numeric) as fare_amount,
+    CAST(extra AS numeric) as extra,
+    CAST(mta_tax AS numeric) as mta_tax,
+    CAST(tip_amount AS numeric) as tip_amount,
+    CAST(tolls_amount AS numeric) as tolls_amount,
+    CAST(improvement_surcharge AS numeric) as improvement_surcharge,
+    CAST(total_amount AS numeric) as total_amount,
+    CAST(payment_type AS int) as payment_type
 FROM {{ source('raw_data', 'green_tripdata') }} 
+WHERE vendor_id is not null
