@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data sources for NYC taxi rides"
+    database: taxi_rides_ny
+    schema: 
+    tables:
