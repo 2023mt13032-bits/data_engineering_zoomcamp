@@ -13,7 +13,7 @@ SELECT
     store_and_fwd_flag,
     CAST(passenger_count AS int) as passenger_count,
     CAST(trip_distance AS float) as trip_distance,
-
+    1 as trip_type, -- yellow taxis can only be street-hail(type 1)
     -- payment info
     CAST(fare_amount AS numeric) as fare_amount,
     CAST(extra AS numeric) as extra,
