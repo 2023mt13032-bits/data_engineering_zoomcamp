@@ -25,4 +25,4 @@ SELECT
     CAST(total_amount AS numeric) as total_amount,
     CAST(payment_type AS int) as payment_type
 FROM {{ source('raw_data', 'green_tripdata') }} 
-WHERE vendor_id is not null
+WHERE vendorid is not null
