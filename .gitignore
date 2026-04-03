@@ -221,4 +221,9 @@ logs/
 # Data directory
 data/
 *.duckdb
+*.duckdb.db
 dbt_internal_packages/
+.bruin.yml
+logs/runs
+logs/*.log
+*.py[cod]
